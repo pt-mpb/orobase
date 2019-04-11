@@ -8,4 +8,8 @@ RUN /bin/bash /opt/bin/configure.sh
 
 COPY ["bin/*", "/usr/local/bin/"]
 
+VOLUME ["/var/www/html", "/srv/app-data"]
+
+EXPOSE 80
+
 RUN chmod +x /usr/local/bin/*

@@ -19,10 +19,14 @@ apt-get install -qqy software-properties-common python-software-properties pytho
 apt-get install -qqy apt-transport-https ca-certificates vim make git-core wget curl procps \
 mcrypt mysql-client zip unzip redis-tools netcat-openbsd
 
+# Install PPA
+add-apt-repository -qqy ppa:ondrej/php
+apt-get -qy update
+
 # Install php
-apt-get install -qqy --no-install-recommends php-fpm php-cli php-common php-dev \
-php-mysql php-curl php-gd php-mcrypt php-xmlrpc php-ldap \
-php-xsl php-intl php-soap php-mbstring php-zip php-bz2 php-redis php-tidy || exit 1
+apt-get install -qqy --no-install-recommends php7.1-fpm php7.1-cli php7.1-common php7.1-dev \
+php7.1-mysql php7.1-curl php7.1-gd php7.1-mcrypt php7.1-xmlrpc php7.1-ldap \
+php7.1-xsl php7.1-intl php7.1-soap php7.1-mbstring php7.1-zip php7.1-bz2 php7.1-redis php7.1-tidy || exit 1
 
 # Install nginx
 apt-get install -qqy --reinstall nginx || exit 1
