@@ -20,7 +20,8 @@ apt-get install -qqy apt-transport-https ca-certificates vim make git-core wget 
 mcrypt mysql-client zip unzip redis-tools netcat-openbsd
 
 # Install PPA
-add-apt-repository -y ppa:ondrej/php
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
+RUN add-apt-repository -y ppa:ondrej/php; exit 0
 apt-get -qy update
 
 # Install php
