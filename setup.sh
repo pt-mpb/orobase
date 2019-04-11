@@ -20,7 +20,7 @@ apt-get install -qqy apt-transport-https ca-certificates vim make git-core wget 
 mcrypt mysql-client zip unzip redis-tools netcat-openbsd
 
 # Install PPA
-add-apt-repository -qqy ppa:ondrej/php
+add-apt-repository -y ppa:ondrej/php
 apt-get -qy update
 
 # Install php
