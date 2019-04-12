@@ -4,6 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 locale-gen en en_US en_US.UTF-8
 dpkg-reconfigure locales
+update-locale LANG='en_US.UTF-8'
 
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
@@ -17,7 +18,7 @@ apt-get install -qqy software-properties-common python-software-properties
 
 # Install PPA
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
-add-apt-repository -y ppa:ondrej/php; exit 0
+add-apt-repository -y ppa:ondrej/php || exit 0
 apt-get -qy update
 
 # Install base packages
