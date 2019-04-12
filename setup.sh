@@ -12,13 +12,13 @@ export LANGUAGE='en_US.UTF-8'
 apt-get -qy update
 apt-get -qqy upgrade
 
+# Install tools
+apt-get install -qqy software-properties-common python-software-properties
+
 # Install PPA
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 add-apt-repository -y ppa:ondrej/php; exit 0
 apt-get -qy update
-
-# Install tools
-apt-get install -qqy software-properties-common python-software-properties
 
 # Install base packages
 apt-get install -qqy apt-transport-https ca-certificates vim nano make git-core wget curl procps \
