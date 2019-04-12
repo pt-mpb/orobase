@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-localedef -c -f UTF-8 -i en_US en_US.UTF-8
 export DEBIAN_FRONTEND=noninteractive
+
+apt-get update
+apt-get install locales
+
+localedef -c -f UTF-8 -i en_US en_US.UTF-8
 
 locale-gen en en_US en_US.UTF-8
 dpkg-reconfigure locales
