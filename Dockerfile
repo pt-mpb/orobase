@@ -13,3 +13,5 @@ VOLUME ["/var/www/html", "/srv/app-data"]
 EXPOSE 80
 
 RUN chmod +x /usr/local/bin/*
+
+CMD ["nginx", "-g", "daemon off;"]
