@@ -12,17 +12,17 @@ export LANGUAGE='en_US.UTF-8'
 apt-get -qy update
 apt-get -qqy upgrade
 
-# Install tools
-apt-get install -qqy software-properties-common python-software-properties python-setuptools
-
-# Install base packages
-apt-get install -qqy apt-transport-https ca-certificates vim make git-core wget curl procps \
-mcrypt mysql-client zip unzip redis-tools netcat-openbsd
-
 # Install PPA
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 RUN add-apt-repository -y ppa:ondrej/php; exit 0
 apt-get -qy update
+
+# Install tools
+apt-get install -qqy software-properties-common python-software-properties python-setuptools
+
+# Install base packages
+apt-get install -qqy apt-transport-https ca-certificates vim nano make git-core wget curl procps \
+mysql-client zip unzip redis-tools netcat-openbsd
 
 # Install php
 apt-get install -qqy --no-install-recommends php7.1-fpm php7.1-cli php7.1-common php7.1-dev \
